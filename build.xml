@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Oct 19, 2011 3:34:22 PM                                                        
+
+     BukkitBlinkPlugin    
+     A Bukkit plugin that allows instant teleporation to your cursor
+                   
+     timpittman                                                                
+     ====================================================================== -->
+<project name="BukkitBlinkPlugin" default="pack">
+    <description>
+            A Bukkit plugin that allows instant teleporation to your cursor
+    </description>
+	
+	<property name="main-class" value="org.digiplex.bukkitplugin.blink.BlinkPlugin"/>
+
+
+    <!-- ================================= 
+          target: pack              
+         ================================= -->
+    <target name="pack" depends="build">
+        <jar destfile="Blink.jar">
+        	<manifest>
+        		<attribute id="Main-Class" value=""/>
+			</manifest>
+        </jar>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: build                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="build">
+    </target>
+
+</project>

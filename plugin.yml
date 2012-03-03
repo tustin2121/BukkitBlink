@@ -1,0 +1,64 @@
+name: Blink
+version: 1.0.2
+description: |
+    Allows users to "blink", or instantly teleport, to the location they are pointing.
+    Also has multiple modes to allow blinking up a pillar or through a wall.
+author: Tustin2121
+main: org.digiplex.bukkitplugin.blink.BlinkPlugin
+permissions:
+    blink.*:
+        description: Allows all blink commands
+        children:
+            blink.core.*: true
+            blink.perks.*: true
+            blink.debug: false
+    blink.core.*:
+        description: Allows the core blinking functionality
+        children:
+            blink.core.command.*: true
+            blink.core.item: true
+    blink.core.command.*:
+        description: Allows blinking with all commands
+        children:
+            blink.core.command.poptions: true
+            blink.core.command.blink: true
+            blink.core.command.back: true
+    blink.core.command.poptions:
+        description: Allows setting personal options
+    blink.core.command.blink:
+        description: Allows blinking on the command line
+    blink.core.command.back:
+        description: Allows blinking back
+    blink.core.item:
+        description: Allows blinking with the item
+    blink.perks.*:
+        description: Gives the player all the possible perks
+        children:
+            blink.perks.noconsume: true
+    blink.perks.noconsume:
+        description: Allows blinking without item consumption
+    blink.debug:
+        description: Allows enabling of debug mode
+commands:
+    blink:
+        aliases: [b]
+        description: The main blink command
+        usage: |
+               /<command> | Blink to the targeted location
+               /<command> [mode] | Blink to the targeted location using specified mode
+               /<command> set [mode] | Set the default blink mode (local (l), column (c), or thru (t))
+               /<command> useitem | Toggle if you can blink with the blink item
+               /<command> default | Toggle if instant commands (/bl, /blink column, etc) set the default mode
+               /<command> back | Blink back to your previous location
+    bl:
+        description: Blink using local mode
+        usage: /<command> | Blink to local area
+    bc:
+        description: Blink using column mode
+        usage: /<command> | Blink up a column
+    bt:
+        description: Blink using thru mode
+        usage: /<command> | Blink through a surface
+    bb:
+        description: Blink back to your previous location
+        usage: /<command> | Blink back to your previous location

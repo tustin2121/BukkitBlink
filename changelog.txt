@@ -1,0 +1,14 @@
+v0.9.1:
+- Added permissions support
+- Updated Config
+- Fixed bug where you could blink to above a torch or other pass-through wall-mounted block, causing you to fall
+- Fixed a bug where blinking back into a tight space could land you in a wall, causing suffocation
+- Fixed a bug where you could not land in a ladder block. Added ability to blink halfway up a ladder.
+- Fixed a bug where you could not set your personal settings (useitem, default) because of a mixup in counting the number of arguments in a command
+- Fixed and completed consuming an item, incorporating it into command blinking as well
+- Added more precise blinking, including blinking onto a trap door only when it is closed
+- Added list of interact blocks - clicking on them within interaction range will not blink you
+- Code cleanup 
+
+Known
+- Blinking locally against a tree or other pillar will sometimes place you a couple blocks from the pillar, instead of against said pillar
